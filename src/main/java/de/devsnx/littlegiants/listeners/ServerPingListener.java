@@ -12,7 +12,7 @@ public class ServerPingListener implements Listener {
 
     @EventHandler
     public void onPing(ServerListPingEvent event){
-        event.setMotd("");
+        event.setMotd("§b§lL§7ittle§b§lG§7iants §8- §a§lModpack Server!");
         event.setMaxPlayers(128);
     }
 }

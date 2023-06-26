@@ -1,0 +1,4 @@
+name: LittleGiants
+version: '1.0.0-SNAPSHOT'
+main: de.devsnx.littlegiants.LittleGiants
+api-version: 1.19
