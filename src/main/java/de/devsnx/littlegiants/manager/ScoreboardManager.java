@@ -38,12 +38,12 @@ public class ScoreboardManager {
         Team teamAdmin = board.registerNewTeam("ATeamAdmin");
         Team teamSpieler = board.registerNewTeam("BTeamSpieler");
 
-        teamAdmin.setPrefix("§cCrew §8| §7");
-        teamSpieler.setPrefix("§bCrew §8| §7");
+        teamAdmin.setPrefix("§c§lCrew §8| §7");
+        teamSpieler.setPrefix("§b§lCrew §8| §7");
 
         Objective sidebar = board.registerNewObjective("Sidebar", "dummy");
         sidebar.setDisplaySlot(DisplaySlot.SIDEBAR);
-        sidebar.setDisplayName("§l§f─═ §bL§7ittle§bG§7iants §f§l═─");
+        sidebar.setDisplayName("§l§f─═ §5§lL§7ittle§b§lG§7iants §f§l═─");
 
 
         Team teamRang = board.registerNewTeam("rang");
@@ -57,18 +57,18 @@ public class ScoreboardManager {
         teamzeit.addEntry(" §4§8»");
 
         sidebar.getScore("§1").setScore(12);
-        sidebar.getScore("§a✔ §aRang:").setScore(11);
+        sidebar.getScore("§a✔ §5Rang:").setScore(11);
         sidebar.getScore(" §1§8»").setScore(10);
         sidebar.getScore("§2").setScore(9);
         sidebar.getScore("§c❤ §bOnline Spieler:").setScore(8);
         sidebar.getScore(" §2§8»").setScore(7);
         sidebar.getScore("§3").setScore(6);
-        sidebar.getScore("§5♫ §aSpielzeit:").setScore(5);
+        sidebar.getScore("§5✦ §5Spielzeit:").setScore(5);
         sidebar.getScore(" §3§8»").setScore(4);
         sidebar.getScore("§5").setScore(3);
-        sidebar.getScore("§5 §bUhrzeit:").setScore(2);
+        sidebar.getScore("§5◕ §bUhrzeit:").setScore(2);
         sidebar.getScore(" §4§8»").setScore(1);
-        sidebar.getScore("§5").setScore(0);
+        sidebar.getScore("§6").setScore(0);
         p.setScoreboard(board);
         this.playerScoreboards.put(p, board);
         updateTeamlistForPlayer(p);
@@ -87,13 +87,13 @@ public class ScoreboardManager {
 
 
         final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
-        teamzeit.setSuffix("§7" + simpleDateFormat.format(new Date()));
-        onlineplayer.setSuffix(" §6" + Bukkit.getOnlinePlayers().size()+ "§8/§7" + Bukkit.getServer().getMaxPlayers());
-        teamPlaytime.setSuffix(Utils.formatTime(forWhom.getStatistic(Statistic.PLAY_ONE_MINUTE)));
+        teamzeit.setSuffix(" §7" + simpleDateFormat.format(new Date()));
+        onlineplayer.setSuffix(" §d" + Bukkit.getOnlinePlayers().size()+ "§8/§7128");
+        teamPlaytime.setSuffix(" " + Utils.formatTime(forWhom.getStatistic(Statistic.PLAY_ONE_MINUTE)));
         if(forWhom.isOp()){
-            teamRang.setSuffix(" §8" + "§cAdmin");
+            teamRang.setSuffix(" §8" + "§c§lCrew");
         }else{
-            teamRang.setSuffix(" §8" + "§bSpieler");
+            teamRang.setSuffix(" §8" + "§b§lCrew");
         }
     }
 
