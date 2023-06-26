@@ -16,11 +16,11 @@ public class Utils {
         int seconds = (remainder % 3600) - (minutes * 60);
 
          if (hours > 0) {
-            return ChatColor.translateAlternateColorCodes('&', "&d" + hours + " &7Stunden &b" + minutes + " &7Minuten");
+            return ChatColor.translateAlternateColorCodes('&', "&b" + hours + " &7Std. &b" + minutes + " &7Min.");
         } else if (minutes > 0) {
-            return ChatColor.translateAlternateColorCodes('&', "&b" + minutes + " &7Minuten");
+            return ChatColor.translateAlternateColorCodes('&', "&b" + 0 + " &7Std. &b" + minutes + " &7Min.");
         } else {
-            return String.valueOf("§b" + seconds + " §fs");
+            return String.valueOf("&b" + 0 + " &78Std. &b" + minutes + " &7Min.");
         }
     }
 }

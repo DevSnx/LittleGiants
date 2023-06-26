@@ -1,5 +1,6 @@
 de\devsnx\littlegiants\listeners\PlayerQuitListener.class
 de\devsnx\littlegiants\manager\ScoreboardManager$1.class
+de\devsnx\littlegiants\listeners\PlayerChatListener.class
 de\devsnx\littlegiants\utils\Utils.class
 de\devsnx\littlegiants\listeners\PlayerJoinListener.class
 de\devsnx\littlegiants\listeners\ServerPingListener.class
