@@ -5,4 +5,5 @@ de\devsnx\littlegiants\utils\Utils.class
 de\devsnx\littlegiants\listeners\PlayerJoinListener.class
 de\devsnx\littlegiants\listeners\ServerPingListener.class
 de\devsnx\littlegiants\manager\ScoreboardManager.class
+de\devsnx\littlegiants\commands\CommandScoreboard.class
 de\devsnx\littlegiants\LittleGiants.class

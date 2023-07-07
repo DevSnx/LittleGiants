@@ -2,3 +2,6 @@ name: LittleGiants
 version: '${project.version}'
 main: de.devsnx.littlegiants.LittleGiants
 api-version: 1.19
+
+commands:
+  scoreboard:

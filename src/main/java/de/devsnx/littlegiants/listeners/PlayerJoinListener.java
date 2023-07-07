@@ -23,6 +23,7 @@ public class PlayerJoinListener implements Listener {
 
         event.getPlayer().sendMessage("");
         event.getPlayer().sendMessage("§7Willkommen §5" + event.getPlayer().getName() + "§7! §7Alle deine Mods sind auf der §aaktuellen §7Version!");
+        event.getPlayer().sendMessage("§7Du kannst das Scoreboard rechts mit §5/scoreboard §7<§aon§7/§coff§7> ein oder ausschalten :)");
         event.getPlayer().sendMessage("");
         event.getPlayer().playSound(event.getPlayer().getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0F ,1.0F);
     }

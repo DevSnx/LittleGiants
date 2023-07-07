@@ -1,6 +1,7 @@
 package de.devsnx.littlegiants.manager;
 
 import de.devsnx.littlegiants.LittleGiants;
+import de.devsnx.littlegiants.commands.CommandScoreboard;
 import de.devsnx.littlegiants.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.Statistic;
@@ -60,7 +61,7 @@ public class ScoreboardManager {
         sidebar.getScore("§a✔ §5Rang:").setScore(11);
         sidebar.getScore(" §1§8»").setScore(10);
         sidebar.getScore("§2").setScore(9);
-        sidebar.getScore("§c❤ §bOnline Spieler:").setScore(8);
+        sidebar.getScore("§c❤ §bOnline:").setScore(8);
         sidebar.getScore(" §2§8»").setScore(7);
         sidebar.getScore("§3").setScore(6);
         sidebar.getScore("§5✦ §5Spielzeit:").setScore(5);
@@ -77,7 +78,11 @@ public class ScoreboardManager {
 
     public void updateSidebar(Player forWhom) {
         if (!this.playerScoreboards.containsKey(forWhom))
-            createNewScoreboard(forWhom);
+            if(LittleGiants.getScores().contains(forWhom)){
+                createNewScoreboard(forWhom);
+            }else{
+                removePlayerScoreboard(forWhom);
+            }
         Scoreboard board = this.playerScoreboards.get(forWhom);
 
         Team onlineplayer = board.getTeam("onlineplayer");
@@ -105,7 +110,11 @@ public class ScoreboardManager {
 
     private Team searchTeamsForEntry(Player forWhom, String entry) {
         if (!this.playerScoreboards.containsKey(forWhom))
-            createNewScoreboard(forWhom);
+            if(LittleGiants.getScores().contains(forWhom)){
+                createNewScoreboard(forWhom);
+            }else{
+                removePlayerScoreboard(forWhom);
+            }
         Scoreboard board = this.playerScoreboards.get(forWhom);
         for (Team team : board.getTeams()) {
             if (team.hasEntry(entry))
@@ -146,7 +155,9 @@ public class ScoreboardManager {
 
     public void updateTeamlistForPlayer(Player forWhom) {
         if (!this.playerScoreboards.containsKey(forWhom))
-            createNewScoreboard(forWhom);
+            if(LittleGiants.getScores().contains(forWhom)){
+                createNewScoreboard(forWhom);
+            }
         Scoreboard board = this.playerScoreboards.get(forWhom);
         List<String> onlineName = new ArrayList<String>();
         for (Player all : Bukkit.getOnlinePlayers()) {
